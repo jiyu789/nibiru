@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>nibiru</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>nibiru</h1>
+    <p>Welcome to nibiru</p>
+    <table>
+        <tr><td>账号</td><td>密码</td></tr>
+        <%users.forEach(function(user){%>
+            <tr>
+                <td><%=user.username%></td>
+                <td><%=user.pwd%></td>
+            </tr>
+        <%})%>
+    </table>
+  <a href="/user/new">create a user</a>
+  </body>
+</html>
