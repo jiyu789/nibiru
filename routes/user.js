@@ -17,14 +17,15 @@ exports.new = function(req, res) {
     res.render('user/new');
 }
 exports.create = function(req, res) {
-    var name = req.params.name;
-    var pwd = req.params.pwd;
+    var name = req.body.name;
+    var pwd = req.body.pwd;
+    console.log(req)
     var User = db.model('User')
     var newUser = new User({
         username:name,
         pwd:pwd
     })
-    newUser.save
+    newUser.save()
     console.log('create name:', name, "pwd=", pwd);
     res.redirect("/user");
 }
